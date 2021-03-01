@@ -18,6 +18,7 @@ public class Patient {
         private String lastName="";
         private String address="";
         private String mobile="";
+        private int uniqId=100;
 	public Patient(String fristName,String lastName,String address,String mobile) {
 		this.setFristName(fristName);
 		this.setLastName(lastName);
@@ -29,6 +30,7 @@ public class Patient {
 		this.setLastName(obj.getLastName());
 		this.setAddress(obj.getAddress());
                 this.setMobile(obj.getMobile());
+                this.setUniqId(obj.getUniqId());
         }
 	public Patient()
 	{
@@ -76,18 +78,25 @@ public class Patient {
 	{
 		this.mobile = mobile;
 	}
-	
+	public int getUniqId()
+        {
+           return this.uniqId;
+        }
+        public void setUniqId(int uniqId)
+        {
+           this.uniqId=uniqId;
+        }
 	public String toString()
 	{
 		return "Name: " +this.fristName+" "+this.lastName+ " Address: " +this.address+ " Mobile: " +this.mobile;
 	}
         
-        public Patient patientDetailsInput() {
+        public Patient patientDetailsInput(int uniqId) {
                String fristName="";
                String lastName="";
                String address="";
                String mobile="";
-
+            this.uniqId=uniqId;
             System.out.println("Enter the patient first name:");
             fristName = input.nextLine();
             this.setFristName(fristName);
